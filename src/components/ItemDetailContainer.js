@@ -5,30 +5,30 @@ import { useParams } from "react-router-dom"
 
 const productosiniciales=[{
     id:1,
-    titulo:"Remera pique Hombre",
+    titulo:"Transpoiting",
     imagen:"https://via.placeholder.com/300x300",
-    categorias: "remeras",
+    categorias: "Peliculas",
     precio:56
 },
 {
     id:2,
-    titulo:"Pantalon Jogger",
+    titulo:"El Director",
     imagen:"https://via.placeholder.com/300x300",
-    categorias: "pantalon",
+    categorias: "Teatro",
     precio:46
 },
 {
     id:3,
-    titulo:"Pantalon azul",
+    titulo:"Umbilical Brothers",
     imagen:"https://via.placeholder.com/300x300",
-    categorias: "pantalon",
+    categorias: "Cine",
     precio:17
 },
 {
     id:4,
-    titulo:"Camisa manga corta",
+    titulo:"Blur",
     imagen:"https://via.placeholder.com/300x300",
-    categorias: "camisas",
+    categorias: "Musica",
     precio:28
 },
 ]

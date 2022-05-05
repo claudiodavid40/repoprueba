@@ -4,30 +4,30 @@ import{useParams} from "react-router-dom"
 
 const productosiniciales=[{
     id:1,
-    titulo:"Remera pique Hombre",
+    titulo:"Transpoiting",
     imagen:"https://via.placeholder.com/300x300",
-    categorias: "remeras",
+    categorias: "Peliculas",
     precio:56
 },
 {
     id:2,
-    titulo:"Pantalon Jogger",
+    titulo:"El Director",
     imagen:"https://via.placeholder.com/300x300",
-    categorias: "pantalon",
+    categorias: "Teatro",
     precio:46
 },
 {
     id:3,
-    titulo:"Pantalon azul",
+    titulo:"Umbilical Brothers",
     imagen:"https://via.placeholder.com/300x300",
-    categorias: "pantalon",
+    categorias: "Cine",
     precio:17
 },
 {
     id:4,
-    titulo:"Camisa manga corta",
+    titulo:"Blur",
     imagen:"https://via.placeholder.com/300x300",
-    categorias: "camisas",
+    categorias: "Musica",
     precio:28
 },
 ]
@@ -43,25 +43,27 @@ const {nombrecategoria}=useParams()
 
 useEffect(()=>{
 
-    if(nombrecategoria==undefined){
+    
         console.log("pido todos los productos")
-    }else{
-        console.log("pido los productos de",nombrecategoria)
-    }
 
+        const promesa=new Promise((res)=>{
+            setTimeout(()=>{
+                res(productosiniciales) 
+            },2000)
+    
+        })
+        .then(()=>{
+           if(nombrecategoria==undefined){
+          setCargando(false) 
+          setProduc(productosiniciales) 
+        }else{
+            console.log("pido los productos de",nombrecategoria)
+           
+            setProduc(productosiniciales.filter(itera=> nombrecategoria==itera.categorias))
+            setCargando(false)
+        }
+        })
 
-
-    const promesa=new Promise((res)=>{
-        setTimeout(()=>{
-            res(productosiniciales) 
-        },2000)
-
-    })
-    .then(()=>{
-       
-      setCargando(false) 
-      setProduc(productosiniciales) 
-    })
 
 },[nombrecategoria])
 
@@ -72,8 +74,9 @@ if (carg){
 }
 else {
     return (
-        
-         <ItemList productos={productosiniciales}/>
+        <div >
+         <ItemList productos={produ}/>
+         </div>
          
        )
 }

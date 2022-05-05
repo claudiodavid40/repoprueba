@@ -1,12 +1,16 @@
 
 import{Link , NavLink} from 'react-router-dom'
-
+import CarWidget from './CarWidget'
 const Nav = () => {
   return (
+    
     <nav className="nav">
-      <Link to="/productos/Camisas" className="nav__link">Camisas /</Link>
-      <Link to="/productos/Remeras" className="nav__link">Remeras /</Link>
-      <Link to="/productos/Pantalon" className="nav__link">Pantalon /</Link>
+      <a href="#" className="linki"><CarWidget/></a>
+      <Link to="/productos/Teatro" className="linki">Teatro /</Link>
+      <Link to="/productos/Cine" className="linki">Cine /</Link>
+      <Link to="/productos/Musica" className="linki">Musica /</Link>
+      <Link to="/productos/Peliculas" className="linki">Peliculas /</Link>
+     
     </nav>
   )
 }

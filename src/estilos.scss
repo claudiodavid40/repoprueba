@@ -1,12 +1,110 @@
-body {
-  /* background-color: red; */
+body{
+    background-color: rgb(214, 226, 43);
 }
 
-.nav {
+header{
+    background-color:darkorange;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:100px;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-  &__link {
-    color: black;
+main{
+    height: 100%;
+}
+.cards{
+    display: flex;
+    background-color: aqua;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    height:100%;
+    border-radius: 10px;
+}
+.header__nav{
+    width: 800px;
+    padding:55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-items: center;
+    font-size: 18px;
+   
+    
+}
+.linki{
+    width:150px;
+    margin:45px;
+    font-style: italic;
+    text-align: center;
+    color:aliceblue;
     text-decoration: none;
-  }
+}
 
+.header__nav a:hover{
+    color:rgb(214, 226, 43);
+   
+    
+}
+
+.header__contenedor{
+    
+    height:100px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+padding:15px;
+color:rgb(247, 242, 242);
+text-decoration: none;
+
+}
+
+.boton-login{
+    width:100px;
+    background-color: #ffff;
+    color:rgb(0, 255, 34);
+    border-radius: 10px;
+}
+.producto{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100%;
+    padding: 20px;
+}
+
+.contador{
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    flex-direction: row;
+    padding-top: 50px;
+}
+
+.modal{
+    position:fixed;
+    top:50%;
+    left:50%;
+    background-color: white;
+}
+.productoDos{
+    display: flex;
+    width:100%;
+    flex-direction: row;
+    padding-left:50px
+}
+footer{
+    background-color:darkorange;
+  
 }

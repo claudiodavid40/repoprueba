@@ -1,9 +1,9 @@
 import Nav from "./Nav"
-
+import{Link , NavLink} from 'react-router-dom'
 const Header = () => {
   return (
     <header className="header">
-      <h1 className="header__titlo">E-Commerce</h1>
+      <Link to="/" className="logo"><h1 className="logo">POSTERPOLISH - REMERAS</h1></Link>
       <Nav/>
     </header>
   )
