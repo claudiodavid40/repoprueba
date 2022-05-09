@@ -3,9 +3,9 @@ import { useState } from 'react'
 
 // import ItemsList from './Components/ItemsList'
 
-const ItemCount = (props) => {
+const ItemCount = ({inicial,stock,onAdd}) => {
 
-const[contador,setContador]=useState(props.inicial)
+const[contador,setContador]=useState(inicial)
 const[ok,setOk]=useState(false)
   // const resultado=useState(0)
   // const contador=resultado[0]
@@ -13,7 +13,7 @@ const[ok,setOk]=useState(false)
 
   const clickbotonsuma=()=>{
     
-    if(contador<10){
+    if(contador<stock){
         setContador(contador+1)
     }
   }
@@ -23,19 +23,15 @@ const[ok,setOk]=useState(false)
   }
   }
   
-
   const okcompra=()=>{
-    // props.onAdd(contador)
+    onAdd(contador)
     setOk(true)
     
 }
-
-if(!ok){
       return (
         <> 
         <div className='producto'>
-        
-   
+       
                 <div className='contador'>
                 <button onClick={clickbotonsuma}>+</button>
                 <p>{contador}</p>
@@ -46,24 +42,6 @@ if(!ok){
         </div>
         </>
       )
-}
-          else{
-            return (
-              <> 
-              <div className='producto'>
-                     
-                      <div className='contador'>
-                      <button onClick={clickbotonsuma}>+</button>
-                      <p>{contador}</p>
-                      <button onClick={clickbotonresta}>-</button>
-                      </div>
-                      <button onClick={okcompra} >agregar al carrito</button>
-                      <p className='modal'>compra confirmada</p>
-                  
-              </div>
-              </>
-            )
-            
-          }
+         
 }
 export default ItemCount

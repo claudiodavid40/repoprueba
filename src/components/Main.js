@@ -9,8 +9,7 @@ import Carrito from "./Carrito"
 const Main = () => {
   return (
     <main>
-    {/* <ItemListContainer/>
-    <ItemDetailContainer/> */}
+  
     <Routes>
     <Route path="/" element={<ItemListContainer/>}/>
     <Route path="/productos/:nombrecategoria" element={<ItemListContainer/>}/> 
