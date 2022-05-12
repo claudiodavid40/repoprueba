@@ -7,28 +7,32 @@ const productosiniciales=[{
     titulo:"Transpoiting",
     imagen:"https://via.placeholder.com/300x300",
     categorias: "Peliculas",
-    precio:56
+    precio:56,
+    cantidadporproducto:0
 },
 {
     id:2,
     titulo:"El Director",
     imagen:"https://via.placeholder.com/300x300",
     categorias: "Teatro",
-    precio:46
+    precio:46,
+    cantidadporproducto:0
 },
 {
     id:3,
     titulo:"Umbilical Brothers",
     imagen:"https://via.placeholder.com/300x300",
     categorias: "Cine",
-    precio:17
+    precio:17,
+    cantidadporproducto:0
 },
 {
     id:4,
     titulo:"Blur",
     imagen:"https://via.placeholder.com/300x300",
     categorias: "Musica",
-    precio:28
+    precio:28,
+    cantidadporproducto:0
 },
 ]
 

@@ -3,13 +3,16 @@ import { ToastContainer, toast } from 'react-toastify';
 import React from 'react'
 import{Link , NavLink} from 'react-router-dom'
 import ItemCount from './ItemCount'
-
-
+import {useState, useContext} from 'react'
+import { contexto } from './miContexto';
 
 const ItemDetail = ({producto}) => {
 
-  const onClick=(propsi)=>{
-    toast(` Se han cargado ${propsi} productos` , {
+  // const[cartItems,setCartItems]=useState(0)
+  const {agregarProducto}=useContext(contexto)
+
+  const onClick=(contador,item)=>{
+    toast(` Se han cargado ${contador} productos` , {
       position: "top-right",
       autoClose: 1000,
       hideProgressBar: false,
@@ -17,7 +20,11 @@ const ItemDetail = ({producto}) => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      });
+      },
+      
+      agregarProducto(contador,producto)
+      
+      );
     
    }
  
@@ -29,9 +36,9 @@ const ItemDetail = ({producto}) => {
        <p> esta es un pequeña descripcion estoy en el detalle </p>
        <p>{producto.precio} </p>
        <p>Categoriaaaa:{producto.categorias}</p>
-       <p>contador {onClick}</p> 
-      <ItemCount stock={5} inicial={0} onAdd={onClick} />
-      {}
+      {/* <p>{cartItems}</p> */}
+      <ItemCount stock={5} inicial={0} onAdd={onClick} productos={producto} />
+      
       <Link to="/">Home</Link>
       <ToastContainer />
       </article>

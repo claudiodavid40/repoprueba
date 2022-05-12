@@ -3,10 +3,10 @@ import { useState } from 'react'
 
 // import ItemsList from './Components/ItemsList'
 
-const ItemCount = ({inicial,stock,onAdd}) => {
+const ItemCount = ({inicial,stock,onAdd,productos}) => {
 
 const[contador,setContador]=useState(inicial)
-const[ok,setOk]=useState(false)
+
   // const resultado=useState(0)
   // const contador=resultado[0]
   // const setContador=resultado[1]
@@ -24,8 +24,8 @@ const[ok,setOk]=useState(false)
   }
   
   const okcompra=()=>{
-    onAdd(contador)
-    setOk(true)
+    onAdd(contador,productos)
+    
     
 }
       return (

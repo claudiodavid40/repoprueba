@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import {db} from "./firebase"
 
 const producto=[{id:1,nombre:"claudio"},
 {id:2,
