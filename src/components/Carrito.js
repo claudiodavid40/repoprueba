@@ -1,15 +1,25 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
+import CarritoLista from './CarritoLista'
 import {contexto} from "./miContexto"
 
 const Carrito = () => {
 
-  const {precio_total,carrito}=useContext(contexto)
-  console.log(precio_total,carrito)
+  const {precio_total,carrito,vaciarCarrito}=useContext(contexto)
+ 
+ 
+  console.log(precio_total,carrito,vaciarCarrito)
+  
+const handleClick=()=>{
+  vaciarCarrito()
+}
+
+
 
   return (
     <div>
     <h1>Carrito</h1>
-    <h2>Precio total:${precio_total}</h2>
+    <CarritoLista carrito={carrito}/>
+    <button onClick={handleClick}>vaciar</button>
     </div>
   )
 }

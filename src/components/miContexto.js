@@ -35,7 +35,10 @@ const agregarProducto=(contador,item)=>{
 
 }
 
-const eliminarProducto=()=>{}
+const eliminarProducto=(id)=>{
+  setCarrito(carrito.filter(carri=>carri.id))
+
+}
 
 const vaciarCarrito=()=>{
   setCarrito([])
