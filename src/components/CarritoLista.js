@@ -5,7 +5,7 @@ import { memo } from 'react'
 const CarritoLista = ({carrito}) => {
   return (
     <ul>{carrito.map(carri=>{
-        return<CarritoItem key={carri.id} carrito={carri}/>
+        return<CarritoItem key={carri.id} carrito={carri.producto} contador={carri.contador} id={carri.id}/>
 
     })}</ul>
   )

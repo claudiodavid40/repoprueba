@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react'
-import CarritoLista from './CarritoLista'
-import {contexto} from "./miContexto"
-
+import React, { useContext, useState } from 'react';
+import CarritoLista from './CarritoLista';
+import {contexto} from "./miContexto";
+import{db} from "./firebase"
 const Carrito = () => {
 
   const {precio_total,carrito,vaciarCarrito}=useContext(contexto)

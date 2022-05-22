@@ -6,12 +6,15 @@ import ItemCount from './ItemCount'
 import {useState, useContext} from 'react'
 import { contexto } from './miContexto';
 
-const ItemDetail = ({producto}) => {
+
+
+
+const ItemDetail = ({producto, id}) => {
 
   // const[cartItems,setCartItems]=useState(0)
   const {agregarProducto}=useContext(contexto)
 
-  const onClick=(contador,item)=>{
+  const onClick=(contador)=>{
     toast(` Se han cargado ${contador} productos` , {
       position: "top-right",
       autoClose: 1000,
@@ -22,7 +25,7 @@ const ItemDetail = ({producto}) => {
       progress: undefined,
       },
       
-      agregarProducto(contador,producto)
+      agregarProducto(contador,producto,id)
       
       );
     

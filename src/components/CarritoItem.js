@@ -4,22 +4,21 @@ import {contexto} from "./miContexto"
 import { memo } from 'react'
 
 
-const CarritoItem = ({carrito}) => {
+const CarritoItem = ({carrito, contador, id}) => {
 
     
 const {eliminarProducto}=useContext(contexto)
-
-const handleClick=()=>{
-   eliminarProducto(carrito.id)
-    
-}
-
 
 
 
   return (
     <div>
-    <li>{carrito.titulo} {carrito.precio} {carrito.categorias} <button onclick={handleClick} >x</button></li>
+     
+    <li><ul>Titulo{carrito.titulo}</ul>
+    <ul>Precio{carrito.precio}</ul> 
+    <ul>categoria{carrito.categorias} </ul>
+    <ul>cantidad{contador}</ul>
+    <button onClick={()=>eliminarProducto(id)} >x</button></li>
     </div>
   )
 }
