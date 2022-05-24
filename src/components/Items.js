@@ -14,7 +14,7 @@ const Items = ({producto}) => {
     <article>
     <h3> {producto.titulo}</h3>
      <img src={producto.imagen}/>
-     <p> esta es un pequeña descripcion  </p>
+     <p> esta es un pequeña descripcioniiii  </p>
      <p>{producto.precio} </p>
      <p>Categoria:{producto.categorias}</p>
      

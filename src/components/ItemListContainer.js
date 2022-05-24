@@ -18,15 +18,16 @@ const {nombrecategoria}=useParams()
 useEffect(()=>{
 
 const productosCollection = collection(db,"Productos")
-const consulta=getDocs(productosCollection)
-console.log(productosCollection)
+//const consulta=getDocs(productosCollection)
+const queryDeFirestore=query(productosCollection,where("categorias","==",nombrecategoria))
+const consulta=getDocs(queryDeFirestore)
+
  consulta
  .then((resultado)=>{
-// console.log(resultado.docs)
+
 const productos=resultado.docs.map(doc=>{
-    const productoConId={
-        ...doc.data(),
-        id:doc.id}
+    const productoConId=doc.data()
+        productoConId.id=doc.id
 
         return productoConId
 
@@ -36,7 +37,7 @@ setProduc(productos)
 setCargando(false)
 })
 .catch((error)=>{
-
+console.log(error)
 })
  .finally(()=>{
 
