@@ -19,19 +19,22 @@ useEffect(()=>{
 
 const productosCollection = collection(db,"Productos")
 //const consulta=getDocs(productosCollection)
-const queryDeFirestore=query(productosCollection,where("categorias","==",nombrecategoria))
-const consulta=getDocs(queryDeFirestore)
+const filtro=query(productosCollection,where("categorias","==",nombrecategoria))
+const consulta=getDocs(filtro)
 
  consulta
  .then((resultado)=>{
 
 const productos=resultado.docs.map(doc=>{
+    
     const productoConId=doc.data()
         productoConId.id=doc.id
 
         return productoConId
 
 })
+
+
 
 setProduc(productos)
 setCargando(false)
@@ -43,26 +46,7 @@ console.log(error)
 
 })
 
-        // console.log("pido todos los productos")
-
-        // const promesa=new Promise((res)=>{
-        //     setTimeout(()=>{
-        //         res(productosiniciales) 
-        //     },2000)
-    
-        // })
-        // .then(()=>{
-        //    if(nombrecategoria==undefined){
-        //   setCargando(false) 
-        //   setProduc(productosiniciales) 
-        // }else{
-        //     console.log("pido los productos de",nombrecategoria)
-           
-        //     setProduc(productosiniciales.filter(itera=> nombrecategoria==itera.categorias))
-        //     setCargando(false)
-        // }
-        // })
-
+       
 
 },[nombrecategoria])
 
