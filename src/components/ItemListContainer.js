@@ -26,7 +26,7 @@ const consulta=getDocs(filtro)
  .then((resultado)=>{
 
 const productos=resultado.docs.map(doc=>{
-    
+
     const productoConId=doc.data()
         productoConId.id=doc.id
 
@@ -51,18 +51,24 @@ console.log(error)
 },[nombrecategoria])
 
 
+return (
+<>
+{ carg ? (<p> Cargando...</p>):<ItemList productos={produ}/>}
+</>
 
-if (carg){
-    return(<p> Cargando...</p>)
-}
-else {
-    return (
-        <div >
-         <ItemList productos={produ}/>
-         </div>
+)
+
+// if (carg){
+//     return(<p> Cargando...</p>)
+// }
+// else {
+//     return (
+//         <div >
+//          <ItemList productos={produ}/>
+//          </div>
          
-       )
-}
+//        )
+// }
 
  
 }

@@ -35,6 +35,7 @@ const ItemDetail = ({producto, id}) => {
       <>
       <article>
       <h3> {producto.titulo}</h3>
+       {/* <img src={producto.imagen} width={300} /> */}
        <img src={producto.imagen}/>
        <p> esta es un pequeña descripcion estoy en el detalle </p>
        <p>{producto.precio} </p>
