@@ -12,14 +12,17 @@ const {eliminarProducto}=useContext(contexto)
 
 
   return (
-    <div>
+    <div className='carrito'>
      
-    <li><ul>Titulo{carrito.titulo}</ul>
-    <ul>Precio{carrito.precio}</ul> 
-    <ul>categoria{carrito.categorias} </ul>
-    <ul>cantidad{contador}</ul>
+    <li>
+    <ul><img src= {carrito.imagen} width={50}/></ul>
+    <ul>Titulo: {carrito.titulo}</ul>
+    <ul>Precio: {carrito.precio}</ul> 
+    <ul>categoria: {carrito.categorias} </ul>
+    <ul>cantidad: {contador}</ul>
     <button onClick={()=>eliminarProducto(id)} >x</button></li>
     </div>
+    
   )
 }
 

@@ -51,11 +51,11 @@ const guardarCompra=()=>{
 
 
   return (
-    <div>
+    <div className='itemCarrito'>
     <h1>Carrito</h1>
     <CarritoLista carrito={carrito}/>
     {/* <button onClick={handleClick}>vaciar</button> */}
-
+    <h2>Total:</h2>
     <button onClick={guardarCompra}> finalizar compra</button>
     {idCompra && <h3>Compra guardada con id: {idCompra}</h3>}
 

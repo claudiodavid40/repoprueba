@@ -33,19 +33,21 @@ const ItemDetail = ({producto, id}) => {
  
     return (
       <>
-      <article>
-      <h3> {producto.titulo}</h3>
-       {/* <img src={producto.imagen} width={300} /> */}
-       <img src={producto.imagen}/>
-       <p> esta es un pequeña descripcion estoy en el detalle </p>
-       <p>{producto.precio} </p>
-       <p>Categoriaaaa:{producto.categorias}</p>
-      {/* <p>{cartItems}</p> */}
-      <ItemCount stock={5} inicial={0} onAdd={onClick} productos={producto} />
+      <div className='itemdetail'>
+      <article className='detalle'>
+      <h2>REMERAS POSTERPOLISH</h2>
       
+       <img src={producto.imagen}/>
+       <h3> {producto.titulo}</h3>
+       <p><span className='precioSpan'>${producto.precio}</span> </p>
+       <p>Categoria:{producto.categorias}</p>
+      <div className='containerCount'>
+      <ItemCount stock={5} inicial={0} onAdd={onClick} productos={producto} />
       <Link to="/">Home</Link>
+      </div>
       <ToastContainer />
       </article>
+      </div>
       </>
     )
   }

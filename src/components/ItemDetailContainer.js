@@ -37,7 +37,7 @@ const ItemDetailContainer = () => {
     
     
    if(carg) {
-    return (<p>cyrr...</p>)
+    return (<p>cargando...</p>)
    }else{
        return(
           <ItemDetail key={produ.id} producto={produ} id={id}/>

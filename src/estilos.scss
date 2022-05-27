@@ -5,6 +5,7 @@ body{
 header{
     background-color:darkorange;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     height:100px;
@@ -14,15 +15,7 @@ header{
 main{
     height: 100%;
 }
-.cards{
-    display: flex;
-    background-color: aqua;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 10px;
-    height:100%;
-    border-radius: 10px;
-}
+
 .header__nav{
     width: 800px;
     padding:55px;
@@ -47,15 +40,6 @@ main{
     color:rgb(214, 226, 43);
    
     
-}
-
-.header__contenedor{
-    
-    height:100px ;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .logo{
@@ -105,6 +89,106 @@ text-decoration: none;
     padding-left:50px
 }
 footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
     background-color:darkorange;
+    width:97%;
+    height: 150px;
+    margin: 2%;   
+    padding: 1rem;
   
+}
+
+.itemsContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width:97% ;
+    margin:2% ;
+    padding: 5%;
+    background-color: rgb(223, 212, 150);
+    border-radius: 3px;
+
+}
+.items{
+    background-color: chocolate;   
+    margin: 15px;   
+    padding: 1rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    border-radius: 3px;
+ 
+  &:hover {
+    transform : scale(1.1);
+  }
+}
+
+.itemdetail{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width:97% ;
+    margin:2% ;
+    padding: 5%;
+    background-color: rgb(223, 212, 150);
+    border-radius: 3px;
+}
+
+.detalle{
+    width:30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: chocolate;
+    margin: 15px;   
+    padding: 1rem;
+    border-radius: 3px;
+
+    & img{
+        width:100%
+    }
+}
+.containerCount{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    background-color: bisque;
+    border-radius: 3px;
+}
+.precioSpan{
+    font-size:20px ;
+    font-weight: bold;
+}
+
+.itemCarrito{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width:97% ;
+    margin:2% ;
+    padding: 5%;
+    background-color: rgb(223, 212, 150);
+    border-radius: 3px;
+}
+.carrito li{
+    display:flex;
+    padding: 1rem;
+    margin: 5px;
+    justify-content: space-between;
+    font-family: 'Courier New', Courier, monospace;
+    flex-direction: row;
+    width:100%;
+    border-radius: 3px;
+    border-color: black;
+    background-color: chocolate;
+
 }

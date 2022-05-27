@@ -11,6 +11,7 @@ const App = () => {
     <MiCustomProvider>
       <Header/>
       <Main/>
+      <Footer/>
       </MiCustomProvider> 
     </BrowserRouter>
     
