@@ -6,8 +6,6 @@ import{db} from "./firebase";
 import { collection , getDoc , doc , getDocs , addDoc , query , where, orderBy } from "firebase/firestore"
 
 
-
-
 const ItemListContainer = () => {
 
 const[produ,setProduc]=useState([])
@@ -15,39 +13,61 @@ const[produ,setProduc]=useState([])
 const[carg,setCargando]=useState(true)
 const {nombrecategoria}=useParams()
 
-useEffect(()=>{
+ useEffect(()=>{
+     const productosCollection = collection(db,"Productos")
+     const consultaDos=getDocs(productosCollection)
+            consultaDos
+            .then((resultado)=>{
+                
+                    
+                        const productos = resultado.docs.map(doc=>{
 
-const productosCollection = collection(db,"Productos")
-//const consulta=getDocs(productosCollection)
-const filtro=query(productosCollection,where("categorias","==",nombrecategoria))
-const consulta=getDocs(filtro)
+                        const productoConId = doc.data()
+                    
+                        productoConId.id = doc.id
+                    
 
- consulta
- .then((resultado)=>{
+                        return productoConId
+                    
+                        }) 
 
-const productos=resultado.docs.map(doc=>{
+                    //console.log(productos)
 
-    const productoConId=doc.data()
-        productoConId.id=doc.id
+                        setProduc(productos)
+                        setCargando(false)
 
-        return productoConId
+                    })
+            .catch((error)=>{
+                console.log(error)
+            })
+            .finally(()=>{
 
-})
+            })
+if(nombrecategoria){
+        const filtro=query(productosCollection,where("categorias","==",nombrecategoria))   
+        const consulta=getDocs(filtro)
+          consulta
+          .then((resultado)=>{
 
+                  const products=resultado.docs.map(doc=>{
 
+                       const productoConIddos=doc.data()
+                           productoConIddos.id=doc.id
 
-setProduc(productos)
-setCargando(false)
-})
-.catch((error)=>{
-console.log(error)
-})
- .finally(()=>{
+                           return productoConIddos
 
-})
+                          })
 
-       
+                               setProduc(products)
+                               setCargando(false)
+                   })
+           .catch((error)=>{
+                   console.log(error)
+                   })
+            .finally(()=>{
 
+           })
+        }
 },[nombrecategoria])
 
 
