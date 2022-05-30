@@ -7,7 +7,7 @@ import {collection , addDoc}from "firebase/firestore"
 
 const Carrito = () => {
 
-  const {precio_total,carrito,vaciarCarrito}=useContext(contexto)
+  const {precio_total,carrito,vaciarCarrito,cantidad_total}=useContext(contexto)
   const [idCompra, setIdCompra] = useState("")
  
  
@@ -55,7 +55,8 @@ const guardarCompra=()=>{
     <h1>Carrito</h1>
     <CarritoLista carrito={carrito}/>
     {/* <button onClick={handleClick}>vaciar</button> */}
-    <h2>Total:</h2>
+    <h2>Total de productos en el carro:{cantidad_total}</h2>
+    <h2>Precio Total:{precio_total}</h2>
     <button onClick={guardarCompra}> finalizar compra</button>
     {idCompra && <h3>Compra guardada con id: {idCompra}</h3>}
 

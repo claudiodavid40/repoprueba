@@ -1,6 +1,6 @@
 import React from "react";
 import { createContext } from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 export const contexto = createContext();
 
@@ -19,15 +19,21 @@ const MiCustomProvider = ({ children }) => {
     let cartProduct = { producto, contador, id };
 
     let cartAux = [];
+    const preciofinal=(producto.precio *contador);
+    setPrecio_total(preciofinal+precio_total)
 
     if (estaEnCarrito(id)) {
-      cartProduct = carrito.find((item) => item.id === +id);
-
-      cartProduct.contador = cartProduct.contador + contador;
-
+      cartProduct = carrito.find((item) => item.id === id);
+      console.log(cartProduct.id)
+      
+      // setPrecio_total(carrito.Precio);
+      setCantidad_total(cantidad_total+contador)
       cartAux = [...cartProduct];
+      console.log(cartAux.precio)
     } else {
       cartAux = [cartProduct, ...carrito];
+
+      setCantidad_total(cantidad_total+contador)
     }
 
     setCarrito(cartAux);
@@ -35,12 +41,16 @@ const MiCustomProvider = ({ children }) => {
 
   const eliminarProducto = (id) => {
     setCarrito(carrito.filter((carri) => carri.id !== id));
+    
     console.log("eliminado");
   };
 
   const vaciarCarrito = () => {
     setCarrito([]);
   };
+
+
+// setCantidad_total(cantidad_total+ children.contador)
 
   const valorDelContexto = {
     cantidad_total: cantidad_total,
