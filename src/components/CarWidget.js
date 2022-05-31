@@ -7,7 +7,7 @@ const CarWidget = () => {
 
   //  const{cantidad_total,precio_total,carrito}=useContext()
 
-  const {cantidad_total}=useContext(contexto)
+  const {cantidad_total,iconocarrito}=useContext(contexto)
 
 
   return (
@@ -16,7 +16,7 @@ const CarWidget = () => {
     <span class="material-icons">
     shopping_cart
     </span>
-    {cantidad_total}
+    {iconocarrito()}
     </Link>
     
   )

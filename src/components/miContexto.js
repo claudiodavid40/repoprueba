@@ -39,9 +39,9 @@ const MiCustomProvider = ({ children }) => {
     setCarrito(cartAux);
   };
 
-  const eliminarProducto = (id) => {
+  const eliminarProducto = (id,contador) => {
     setCarrito(carrito.filter((carri) => carri.id !== id));
-    
+   
     console.log("eliminado");
   };
 
@@ -49,12 +49,20 @@ const MiCustomProvider = ({ children }) => {
     setCarrito([]);
   };
 
+const iconocarrito=()=>{
+  return carrito.reduce((acum,i)=>acum +i.contador,0);
+}
+  const preciototal=()=>{
+    return carrito.reduce((acum,i)=>acum+i.contador*i.producto.precio,0);
+  }
 
 // setCantidad_total(cantidad_total+ children.contador)
 
   const valorDelContexto = {
     cantidad_total: cantidad_total,
     precio_total: precio_total,
+    preciototal,
+    iconocarrito,
     carrito: carrito,
     agregarProducto,
     eliminarProducto,
