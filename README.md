@@ -10,9 +10,13 @@
 ⚪ Create-React-App (React Js)
 ⚪ Firebase
 ⚪ Estilos en CSS
+⚪ Boostrap para los links del nav Fondo y tipografias
 ⚪ Deploy en Netlify
 
 <br>
+# Demo:
+
+<img src="./videofinal.gif"/>
 
 # Instalación para poder usarlo
 

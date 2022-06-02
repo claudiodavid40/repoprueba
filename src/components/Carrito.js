@@ -52,7 +52,8 @@ const guardarCompra=()=>{
     <h2>Total de productos en el carro:{iconocarrito()}</h2>
     <h2>Precio Total:$ {preciototal()}</h2>
     <button onClick={guardarCompra}> finalizar compra</button>
-    {idCompra && <h3>Compra guardada con id: {idCompra}</h3>}
+    <br></br>
+    {idCompra && <h3>Felicitaciones! ha realizado con exito su compra.<br></br><span className='codigospan'>Código:{idCompra}</span></h3>}
 
     </div>
   )
