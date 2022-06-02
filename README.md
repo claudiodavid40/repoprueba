@@ -17,7 +17,7 @@
 
 # Demo:
 
-<img src="/videofinal.gif"/>
+<img src="imagen/videofinal.gif"/>
 
 <br><br>
 
