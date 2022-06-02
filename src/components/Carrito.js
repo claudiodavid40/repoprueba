@@ -3,6 +3,7 @@ import CarritoLista from './CarritoLista';
 import {contexto} from "./miContexto";
 import{db} from "./firebase";
 import {collection , addDoc}from "firebase/firestore"
+import { toast } from 'react-toastify';
 
 
 const Carrito = () => {
@@ -10,12 +11,6 @@ const Carrito = () => {
   const {precio_total,carrito,vaciarCarrito,cantidad_total,preciototal,iconocarrito}=useContext(contexto)
   const [idCompra, setIdCompra] = useState("")
  
- 
- 
-  
-const handleClick=()=>{
-  vaciarCarrito()
-}
 
 const guardarCompra=()=>{
 
@@ -38,12 +33,11 @@ const guardarCompra=()=>{
   const consulta=addDoc(ordenesCollection,orden)
 
   consulta
-  .then((resultado)=>{
-    console.log(orden)
+  .then((resultado)=>{   
     setIdCompra(resultado.id)
   })
   .catch((err)=>{
-    console.log(err)
+    toast.error(err)
   })
 
 }
@@ -56,7 +50,7 @@ const guardarCompra=()=>{
     <CarritoLista carrito={carrito}/>
     {/* <button onClick={handleClick}>vaciar</button> */}
     <h2>Total de productos en el carro:{iconocarrito()}</h2>
-    <h2>Precio Total:{preciototal()}</h2>
+    <h2>Precio Total:$ {preciototal()}</h2>
     <button onClick={guardarCompra}> finalizar compra</button>
     {idCompra && <h3>Compra guardada con id: {idCompra}</h3>}
 

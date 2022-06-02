@@ -5,7 +5,7 @@ import {contexto} from "./miContexto"
 
 const CarWidget = () => {
 
-  //  const{cantidad_total,precio_total,carrito}=useContext()
+  
 
   const {cantidad_total,iconocarrito}=useContext(contexto)
 

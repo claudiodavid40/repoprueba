@@ -1,17 +1,14 @@
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import React from 'react'
-import{Link , NavLink} from 'react-router-dom'
+import{Link } from 'react-router-dom'
 import ItemCount from './ItemCount'
-import {useState, useContext} from 'react'
+import { useContext} from 'react'
 import { contexto } from './miContexto';
-
-
 
 
 const ItemDetail = ({producto, id}) => {
 
-  // const[cartItems,setCartItems]=useState(0)
   const {agregarProducto}=useContext(contexto)
 
   const onClick=(contador)=>{
@@ -42,7 +39,7 @@ const ItemDetail = ({producto, id}) => {
        <p><span className='precioSpan'>${producto.precio}</span> </p>
        <p>Categoria:{producto.categorias}</p>
       <div className='containerCount'>
-      <ItemCount stock={5} inicial={0} onAdd={onClick} productos={producto} />
+      <ItemCount stock={5} inicial={1} onAdd={onClick} productos={producto} />
       <Link to="/">Home</Link>
       </div>
       <ToastContainer />

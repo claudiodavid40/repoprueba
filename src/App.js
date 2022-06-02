@@ -21,7 +21,3 @@ const App = () => {
 export default App
 
 
-
-/* export default app = () => {
-  return "Hola Mundo"
-} */

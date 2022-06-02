@@ -6,11 +6,8 @@ import{db} from "./firebase";
 
 import { collection , getDoc , doc , getDocs , addDoc , query , where, orderBy } from "firebase/firestore"
 
-
 const ItemListContainer = () => {
-
 const[produ,setProduc]=useState([])
-
 const[carg,setCargando]=useState(true)
 const {nombrecategoria}=useParams()
 
@@ -22,17 +19,13 @@ const {nombrecategoria}=useParams()
                 
                     
                         const productos = resultado.docs.map(doc=>{
-
-                        const productoConId = doc.data()
-                    
+                        const productoConId = doc.data()                    
                         productoConId.id = doc.id
-                    
-
                         return productoConId
                     
                         }) 
 
-                    //console.log(productos)
+        
 
                         setProduc(productos)
                         setCargando(false)
@@ -78,18 +71,6 @@ return (
 </>
 
 )
-
-// if (carg){
-//     return(<p> Cargando...</p>)
-// }
-// else {
-//     return (
-//         <div >
-//          <ItemList productos={produ}/>
-//          </div>
-         
-//        )
-// }
 
  
 }
