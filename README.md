@@ -14,9 +14,12 @@
 ⚪ Deploy en Netlify
 
 <br>
+
 # Demo:
 
 <img src="./videofinal.gif"/>
+
+<br><br>
 
 # Instalación para poder usarlo
 
