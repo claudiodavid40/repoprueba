@@ -2,9 +2,9 @@
 
 ### PosterPolish - Remeras es un e-commerce de remeras impresas con motivos de afiches polacos realizada en React Js. El usuario encontrara los modelos de 4 de los multiples generos que evoca el movimiento artistico: litertura, musica,teatro y cine.
 
-<br><br>
+<br>
 
-# está construido con:
+# Está construido con:
 
 <br>
 ⚪ Create-React-App (React Js)
@@ -45,4 +45,15 @@ npm start
 
 <br>
 
-#### En la carpeta `components` vas a encontrar todos los componentes con los que se realizó el proyecto. Los componentes que se comunican con la base de datos de firebase son los siguientes:
+#### En la carpeta `components` vas a encontrar todos los componentes con los que se realizó el proyecto.
+
+**ItemListContainer.js:** Se realiza la conexion con las base de datos y muestra todos los productos o aquellos filtrados por categoria
+
+  <br>
+
+**ItemDetailContainer.js:** Se realiza la conexion con las base de datos y prepara el producto seleccionado.
+
+  <br>
+
+**miContexto.js:** Acá se encuentran las funciones para agregar y remover los productos del carrito .
+<br>
