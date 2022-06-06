@@ -1,18 +1,18 @@
 # PosterPolish - Remeras
 
-### PosterPolish - Remeras es un e-commerce de remeras impresas con motivos de afiches polacos realizada en React Js. El usuario encontrara los modelos de 4 de los multiples generos que evoca el movimiento artistico: litertura, musica,teatro y cine.
+### PosterPolish - Remeras es un e-commerce de remeras impresas con motivos de afiches polacos realizado en React Js. El usuario encontrará los modelos de 4 de los múltiples géneros que evoca el movimiento artístico: Litertura, Música,Teatro y Cine.
 
 <br>
 
-# Está construido con:
+# Está construído con:
 
 <br>
 ⚪ Create-React-App (React Js)
-⚪ React-router-dom : hicimos uso de esta libreria para generar las rutas
+⚪ React-router-dom : hice uso de esta librería para generar las rutas.
 ⚪ React-toastify: Para emitir un mensaje que muestra los archivos cargados en el carro del proyecto.
 ⚪ Firebase
 ⚪ Estilos en CSS
-⚪ Boostrap para los links del nav Fondo y tipografias
+⚪ Boostrap para los links del nav Fondo y tipografías
 ⚪ Deploy en Netlify
 
 <br>

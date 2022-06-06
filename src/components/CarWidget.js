@@ -7,16 +7,18 @@ const CarWidget = () => {
 
   
 
-  const {cantidad_total,iconocarrito}=useContext(contexto)
+  const {iconocarrito}=useContext(contexto)
 
 
   return (
     
-    <Link to="/carrito">
+    <Link to="/carrito" className="carritocolor">
+     <div >
     <span class="material-icons">
     shopping_cart
     </span>
     {iconocarrito()}
+    </div> 
     </Link>
     
   )

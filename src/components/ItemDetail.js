@@ -1,5 +1,5 @@
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 import React from 'react'
 import{Link } from 'react-router-dom'
 import ItemCount from './ItemCount'
@@ -34,7 +34,7 @@ const ItemDetail = ({producto, id}) => {
       <article className='detalle'>
       <h2>REMERAS POSTERPOLISH</h2>
       
-       <img src={producto.imagen}/>
+       <img src={producto.imagen} alt="imagenproductos"/>
        <h3> {producto.titulo}</h3>
        <p><span className='precioSpan'>${producto.precio}</span> </p>
        <p>Categoria:{producto.categorias}</p>
