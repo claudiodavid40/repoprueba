@@ -3,7 +3,7 @@ import CarritoLista from './CarritoLista';
 import {contexto} from "./miContexto";
 import{db} from "./firebase";
 import {collection , addDoc}from "firebase/firestore"
-import { toast } from 'react-toastify';
+
 
 
 const Carrito = () => {
@@ -11,6 +11,7 @@ const Carrito = () => {
   const {precio_total,carrito,vaciarCarrito,cantidad_total,preciototal,iconocarrito}=useContext(contexto)
   const [idCompra, setIdCompra] = useState("")
  
+const vaciarcarro=()=>{vaciarCarrito()}
 
 const guardarCompra=()=>{
 
@@ -29,6 +30,7 @@ const guardarCompra=()=>{
     total : 10000
   }
 
+  
 
   const consulta=addDoc(ordenesCollection,orden)
 
@@ -37,7 +39,7 @@ const guardarCompra=()=>{
     setIdCompra(resultado.id)
   })
   .catch((err)=>{
-    toast.error(err)
+    console.log(err)
   })
 
 }
@@ -48,10 +50,13 @@ const guardarCompra=()=>{
     <div className='itemCarrito'>
     <h1>Carrito</h1>
     <CarritoLista carrito={carrito}/>
-    {/* <button onClick={handleClick}>vaciar</button> */}
+    
     <h2>Total de productos en el carro:{iconocarrito()}</h2>
     <h2>Precio Total:$ {preciototal()}</h2>
-    <button onClick={guardarCompra}> finalizar compra</button>
+    <div className='botonescarro'>
+    <button onClick={guardarCompra}> Finalizar compra</button>
+    <button onClick={vaciarcarro}> Vaciar</button>
+    </div>
     <br></br>
     {idCompra && <h3>Felicitaciones! ha realizado con exito su compra.<br></br><span className='codigospan'>Código:{idCompra}</span></h3>}
 

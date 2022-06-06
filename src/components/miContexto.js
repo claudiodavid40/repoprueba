@@ -1,6 +1,6 @@
 import React from "react";
 import { createContext } from "react";
-import { useState} from "react";
+import { useState } from "react";
 
 export const contexto = createContext();
 
@@ -8,8 +8,6 @@ const { Provider } = contexto;
 
 const MiCustomProvider = ({ children }) => {
   const [carrito, setCarrito] = useState([]);
-  const [cantidad_total, setCantidad_total] = useState(0);
-  const [precio_total, setPrecio_total] = useState(0);
 
   const estaEnCarrito = (id) => {
     return carrito && carrito.some((item) => item.id === id);
@@ -19,18 +17,14 @@ const MiCustomProvider = ({ children }) => {
     let cartProduct = { producto, contador, id };
 
     let cartAux = [];
-    const preciofinal=(producto.precio *contador);
-    setPrecio_total(preciofinal+precio_total)
 
     if (estaEnCarrito(id)) {
       cartProduct = carrito.find((item) => item.id === id);
-      setCantidad_total(cantidad_total+contador)
+      cartProduct.contador = cartProduct.contador + contador;
+
       cartAux = [...cartProduct];
-      
     } else {
       cartAux = [cartProduct, ...carrito];
-
-      setCantidad_total(cantidad_total+contador)
     }
 
     setCarrito(cartAux);
@@ -44,16 +38,17 @@ const MiCustomProvider = ({ children }) => {
     setCarrito([]);
   };
 
-const iconocarrito=()=>{
-  return carrito.reduce((acum,i)=>acum +i.contador,0);
-}
-  const preciototal=()=>{
-    return carrito.reduce((acum,i)=>acum+i.contador*i.producto.precio,0);
-  }
+  const iconocarrito = () => {
+    return carrito.reduce((acum, i) => acum + i.contador, 0);
+  };
+  const preciototal = () => {
+    return carrito.reduce(
+      (acum, i) => acum + i.contador * i.producto.precio,
+      0
+    );
+  };
 
   const valorDelContexto = {
-    cantidad_total: cantidad_total,
-    precio_total: precio_total,
     preciototal,
     iconocarrito,
     carrito: carrito,
@@ -67,3 +62,6 @@ const iconocarrito=()=>{
 };
 
 export default MiCustomProvider;
+
+
+

@@ -7,7 +7,7 @@ import { memo } from 'react'
 const CarritoItem = ({carrito, contador, id}) => {
 
     
-const {eliminarProducto}=useContext(contexto)
+const {eliminarProducto,cantidad_total}=useContext(contexto)
 
 
 

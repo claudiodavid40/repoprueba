@@ -8,6 +8,8 @@
 
 <br>
 ⚪ Create-React-App (React Js)
+⚪ React-router-dom : hicimos uso de esta libreria para generar las rutas
+⚪ React-toastify: Para emitir un mensaje que muestra los archivos cargados en el carro del proyecto.
 ⚪ Firebase
 ⚪ Estilos en CSS
 ⚪ Boostrap para los links del nav Fondo y tipografias

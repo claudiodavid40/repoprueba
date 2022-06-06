@@ -3,7 +3,7 @@ import { useState } from "react";
 
 
 
-const ItemCount = ({ inicial, stock, onAdd }) => {
+const ItemCount = ({ inicial, stock, onAdd}) => {
   const [contador, setContador] = useState(inicial);
 
 
